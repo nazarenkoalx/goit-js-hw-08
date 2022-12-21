@@ -14,6 +14,13 @@ function onInput(evt) {
 
 function onSubmit(evt) {
   evt.preventDefault();
+  if (
+    evt.currentTarget.elements.email.value === '' ||
+    evt.currentTarget.elements.message.value === ''
+  ) {
+    alert('to continue, plese, fill all the empty fields!');
+    return;
+  }
   evt.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   localStorage.clear();
